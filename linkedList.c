@@ -28,3 +28,41 @@ linknd_t* create_node(int value){
 	
 	return ndPtr; 
 }
+
+
+void addTail(int value){
+	linknd_t *ndPtr, *newPtr;
+	
+	if(list==NULL)
+	{
+		return;
+	}
+	else
+	{
+		ndPtr=list;
+		while(ndPtr->next != NULL){
+			ndPtr=ndPtr->next;
+		}
+		
+		newPtr=create_node(value);
+		ndPtr->next=newPtr;
+	}
+}
+
+
+void genList(void){
+	
+	list=create_node(0);
+	
+	return;
+}
+
+void print_list(void){
+	linknd_t *ndPtr;
+	
+	ndPtr=(linknd_t*)list->next;
+	while(ndPtr != NULL){
+		printf("%i ", ndPtr->data);
+		ndPtr=ndPtr->next;
+	} 
+}
